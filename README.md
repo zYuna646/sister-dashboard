@@ -1,8 +1,20 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sister Dashboard
+
+A modern dashboard application built with Next.js and Tailwind CSS.
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -10,13 +22,51 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
+
+Create a `.env.local` file in the root directory with the following variables:
+
+```
+API_URL=http://api.example.com
+```
+
+Replace the `API_URL` with your actual backend API URL.
+
+## Authentication
+
+The application includes authentication with the following endpoints:
+
+- Login: `${API_URL}/auth/login`
+  - Method: POST
+  - Body:
+    ```json
+    {
+      "email": "Admin@example.com",
+      "password": "Admin"
+    }
+    ```
+
+## Features
+
+- Modern UI with Tailwind CSS
+- Responsive design
+- Form validation
+- Reusable components
+- Authentication with JWT
+
+## Folder Structure
+
+- `/app` - Next.js app directory
+  - `/components` - Reusable UI components
+    - `/auth` - Authentication-related components
+    - `/ui` - UI components like buttons, inputs, etc.
+  - `/lib` - Utility functions
+  - `/services` - API services
+  - `/types` - TypeScript type definitions
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
